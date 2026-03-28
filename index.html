@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Capture</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 class="title">NEON CAPTURE</h1>
+        
+        <div id="menu-ui">
+            <button class="btn ai-btn" onclick="startAIGame()">Play Unbeatable AI</button>
+            <div class="divider">OR P2P MULTIPLAYER</div>
+            <button class="btn host-btn" onclick="hostGame()">Host Game</button>
+            <div id="host-info" class="hidden">
+                <p>Your Game ID:</p>
+                <code id="peer-id-display">Loading...</code>
+                <p class="small">Share this ID with your opponent.</p>
+            </div>
+            <div class="join-section">
+                <input type="text" id="join-id" placeholder="Enter Opponent ID">
+                <button class="btn join-btn" onclick="joinGame()">Join Game</button>
+            </div>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <div class="score-board">
+                <div class="player p1-score">BLUE: <span id="score-1">2</span></div>
+                <div id="turn-indicator">Turn: Blue</div>
+                <div class="player p2-score">RED: <span id="score-2">2</span></div>
+            </div>
+            <div id="board"></div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2 id="result-title">YOU WIN!</h2>
+            <p id="result-details">Blue: 34 | Red: 30</p>
+            <button class="btn" onclick="resetToMenu()">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
